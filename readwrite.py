@@ -1,12 +1,6 @@
 import json
 
 #+=======================================================+
-
-
-currentTask = dict({})
-FILE = "tasks.json"
-
-
 #+=======================================================+
 
 def readJson(file):
@@ -25,28 +19,8 @@ def writeJson(dicts,file):
 
 
 
-def Write(tasks):
-    WRITING = True
-
-    while(WRITING):
-
-        taskName = input("enter task name: ")
-        taskDate = input("enter task date in YYYY-MM-DD format: ")
-        tasks[taskName] = taskDate
-
-        goAgain = input("go again YES or NO").lower()
-        if goAgain == "yes":
-            WRITING = True
-        elif goAgain == "no":
-            WRITING = False
-        else:
-            print("incorrect input, choose YES or NO")
-
-    currentTask = tasks
-    writeJson(currentTask,FILE)
 
 
 
 
 
-Write(readJson(FILE)) 
