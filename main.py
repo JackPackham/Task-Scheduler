@@ -22,8 +22,8 @@ while(RUNNING):
 
 
     elif rorw == "2":
-        #sortDates(jsonToArray(currentTask))
-        reminderMain(currentTask)
+
+        reminderMain(currentTask,RUNNING)
 
 
 

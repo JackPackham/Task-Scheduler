@@ -1,4 +1,6 @@
 import datetime
+from datetime import date
+import time
 
 def jsonToArray(json):
     dateArray = []
@@ -8,35 +10,39 @@ def jsonToArray(json):
         keysArray.append(key)
 
     return dateArray
-    return keysArray
     
 
 
 
 
 def sortDates(dateArray):
-    tempDates = [datetime.datetime.strptime(ts, "%Y-%m-%d") for ts in dateArray]
-    tempDates.sort()
-    tempSortDates = [datetime.datetime.strftime(ts, "%Y-%m-%d") for ts in tempDates]
-    print(tempSortDates)
+    try:
+        tempDates = [datetime.datetime.strptime(ts, "%Y-%m-%d") for ts in dateArray]
+        tempDates.sort()
+        tempSortDates = [datetime.datetime.strftime(ts, "%Y-%m-%d") for ts in tempDates]
+        print(tempSortDates)
+
+        return tempSortDates
+    except:
+        print("Something went wrong with the .json file")
+
+
+
+
+def reminderMain(dateArray,isRunning):
+
     
+    tempDate = date.today()
+    CurrentDate = tempDate.strftime("%Y-%m-%d")
+
+    while(isRunning):
+        time.sleep(1)
+        dateEntry = sortDates(jsonToArray(dateArray))
+        if dateEntry[0] == CurrentDate:
+            print("do shit!")
+        elif (buttonpress)
+
+        
 
 
-
-
-
-
-def search():
-    with open("tasks.json") as tasks:
-        print ("hello")
-
-
-
-
-def convertDate(date):
-    year,month,day = date.split("-")
-
-
-
-def reminderMain(dict):
-    sortDates(jsonToArray(dict))
+        
