@@ -1,9 +1,13 @@
 import json
 import time
-import reminder.py
-import readwrite.py
+from readwrite import *
+from reminder import *
 
 RUNNING = True
+FILE = "tasks.json"
+currentTask = readJson(FILE)
+
+
 
 while(RUNNING):
 
@@ -13,54 +17,20 @@ while(RUNNING):
 
     rorw = input().lower()
     
-
-
-
     if rorw == "3":
         exit()
 
 
-
-
-
-
     elif rorw == "2":
-        print("reminder not coded yet")
-
-
+        #sortDates(jsonToArray(currentTask))
+        reminderMain(currentTask)
 
 
 
 
     elif rorw == "1":
 
-
-        currentTask = dict({})
-        FILE = "tasks.json"
-        WRITING = True
-
-        while(WRITING):
-
-            taskName = input("enter task name: ")
-            taskDate = input("enter task date in YYYY-MM-DD format: ")
-            tasks[taskName] = taskDate
-
-            goAgain = input("go again YES or NO").lower()
-
-            if goAgain == "yes":
-                WRITING = True
-
-            elif goAgain == "no":
-                WRITING = False
-
-            else:
-                print("incorrect input, choose YES or NO")
-
-
-        currentTask = tasks
-        writeJson(currentTask,FILE)  
-
-
+        Write(currentTask,FILE)  
 
 
 
