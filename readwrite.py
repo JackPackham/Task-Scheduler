@@ -15,7 +15,14 @@ def writeJson(dicts,file):
 
 
 
-def Write(tasks,FILE):
+def wipeJson(file):
+    currentTask = dict({})
+    writeJson(currentTask,file) 
+
+
+
+
+def Write(tasks,file):
 
     WRITING = True
 
@@ -34,4 +41,4 @@ def Write(tasks,FILE):
             print("incorrect input, choose YES or NO: ")
 
     currentTask = tasks
-    writeJson(currentTask,FILE)
+    writeJson(currentTask,file)

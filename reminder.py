@@ -29,18 +29,24 @@ def sortDates(dateArray):
 
 
 
+
 def reminderMain(dateArray,isRunning):
 
     
     tempDate = date.today()
     CurrentDate = tempDate.strftime("%Y-%m-%d")
 
-    while(isRunning):
-        time.sleep(1)
-        dateEntry = sortDates(jsonToArray(dateArray))
-        if dateEntry[0] == CurrentDate:
-            print("do shit!")
-        elif (buttonpress)
+    try:
+        while(isRunning):
+            print ("use ctrl-c to exit...")
+            time.sleep(1)
+            dateEntry = sortDates(jsonToArray(dateArray))
+            if dateEntry[0] == CurrentDate:
+                print("do shit!")
+
+
+    except KeyboardInterrupt:
+        pass
 
         
 

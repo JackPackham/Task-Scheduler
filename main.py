@@ -9,16 +9,25 @@ currentTask = readJson(FILE)
 
 
 
+
+
 while(RUNNING):
 
     print ("1. write new reminder")
     print ("2. run reminder app")
-    print ("3. exit")
+    print ("3. wipe .json")
+    print ("4. exit")
 
     rorw = input().lower()
     
-    if rorw == "3":
+
+
+    if rorw == "4":
         exit()
+
+
+    elif rorw == "3":
+        wipeJson(FILE)
 
 
     elif rorw == "2":
@@ -26,13 +35,9 @@ while(RUNNING):
         reminderMain(currentTask,RUNNING)
 
 
-
-
     elif rorw == "1":
 
         Write(currentTask,FILE)  
-
-
 
 
     else:
