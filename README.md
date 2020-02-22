@@ -1,4 +1,4 @@
-# Task-Scheduler
+# Standalone Task-Scheduler
 my task scheduler app
 
 Please understand that this is far from complete and is mearly an my own introduction into the world of coding in a somewhat 
